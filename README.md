@@ -31,7 +31,7 @@ $docker inspect nombre_contenedor
 $docker inspect -f '{{json .Config.Env}}' nombre_contenedor
 Donde:
 - Config es un atributo del objeto metadata del contenedor ($docker inspect nombre_contenedor)
--Env es un atributo dentro de Config
+- Env es un atributo dentro de Config
 ```
 
 ### **Renombrar el nombre de un contenedor:**
@@ -57,4 +57,11 @@ $docker ps -aq
 ### **Eliminar todos los contenedor:**
 ```
 $docker rm $(docker ps -aq)
+```
+
+### **Correr un contenedor en modo interactivo:**
+```
+$docker run -it name_image
+Ex:
+$docker run -it ubuntu
 ```

@@ -49,6 +49,11 @@ $docker logs nombre_contenedor
 $docker rm nombre_contenedor
 ```
 
+### **Eliminar un contenedor, aunque este corriendo:**
+```
+$docker rm -f nombre_contenedor
+```
+
 ### **Mostrar la lista de los id de los contenedores:**
 ```
 $docker ps -aq
@@ -64,4 +69,23 @@ $docker rm $(docker ps -aq)
 $docker run -it name_image
 Ex:
 $docker run -it ubuntu
+```
+
+### **Levantar un contenedor, despejando la terminal "detach" :**
+```
+$docker run -detach --name nombre_que_le_doy_contenedor name_image
+Ex:
+$docker run -detach --name server nginx
+```
+
+### **Levantar un contenedor, despejando la terminal "detach" e indicandole en que puerto de mi maquina quiero escucharlo :**
+```
+$docker run -d --name nombre_que_le_doy_contenedor -p puerto_de_mi_host:puerto_contenedor name_image
+Ex:
+$docker run -d --name server -p 8080:80 nginx
+Donde:
+- "-d": "-detach"
+- "-p": "-publish"
+Ex: Si quiero levantar el mismo servicio, debo cambiar el nombre y otro puerto de mi maquina:
+$docker run -d --name server3 -p 8081:80 nginx
 ```

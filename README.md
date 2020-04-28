@@ -64,6 +64,11 @@ $docker ps -aq
 $docker rm $(docker ps -aq)
 ```
 
+### **Eliminar todos los contenedor, aunque esten levantados:**
+```
+$docker rm -f $(docker ps -aq)
+```
+
 ### **Correr un contenedor en modo interactivo:**
 ```
 $docker run -it name_image
@@ -78,7 +83,7 @@ Ex:
 $docker run -detach --name server nginx
 ```
 
-### **Levantar un contenedor, despejando la terminal "detach" e indicandole en que puerto de mi maquina quiero escucharlo :**
+### **Levantar un contenedor, despejando la terminal "detach" e indicandole en que puerto de mi maquina quiero escucharlo:**
 ```
 $docker run -d --name nombre_que_le_doy_contenedor -p puerto_de_mi_host:puerto_contenedor name_image
 Ex:
@@ -88,4 +93,15 @@ Donde:
 - "-p": "-publish"
 Ex: Si quiero levantar el mismo servicio, debo cambiar el nombre y otro puerto de mi maquina:
 $docker run -d --name server3 -p 8081:80 nginx
+```
+
+### **Levantar un contenedor, indicandole que carpetas quiero vincular entre mi host y el contenedor**
+```
+$docker run --name db -d -v path_de_la_carpeta_de_mi_host:path_carpeta_contenedor name_image
+Donde:
+- "-v": -volumen
+Ex:
+$docker run --name db -d -v /mnt/c/Users/jcoca/OneDrive/Escritorio/platzi-docker/docker-comandos/mongodata:/data/db mongo
+- Con esto ya podemos crear una base de datos y cuando eliminemos el contenedor y lo volvamos a levantar los datos de nuestra 
+base de datos no se eliminarán
 ```

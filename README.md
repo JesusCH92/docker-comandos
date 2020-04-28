@@ -97,7 +97,7 @@ $docker run -d --name server3 -p 8081:80 nginx
 
 ### **Levantar un contenedor, indicandole que carpetas quiero vincular entre mi host y el contenedor**
 ```
-$docker run --name db -d -v path_de_la_carpeta_de_mi_host:path_carpeta_contenedor name_image
+$docker run --name nombre_que_le_doy_contenedor -d -v path_de_la_carpeta_de_mi_host:path_carpeta_contenedor name_image
 Donde:
 - "-v": -volumen
 Ex:

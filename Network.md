@@ -19,3 +19,7 @@ $docker network connect jesusnetwork dbMongo
 ```
 $docker run -d --name dbMongo mongo
 ```
+## **Eliminar una red en especifico:**
+```
+$docker network rm nombre-de-la-red
+```

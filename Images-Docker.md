@@ -20,5 +20,5 @@ $docker build -t ubuntu:jesus
 $docker push tu-usuario-docker/tag-imagen-creada
 Ex:
 $docker push jesusch92/ubuntu:jesus
-> Si accedes a tu repositorio de [docker-hub](https://hub.docker.com/) lo podrás ver
 ```
+> Si accedes a tu repositorio de [docker-hub](https://hub.docker.com/) lo podrás ver
